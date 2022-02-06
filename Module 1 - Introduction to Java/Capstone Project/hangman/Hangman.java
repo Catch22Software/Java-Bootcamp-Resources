@@ -98,7 +98,6 @@ public class Hangman {
      * @param args command line args
      */
     public static void main(String[] args) {
-
         System.out.println("Welcome to the game of hangman.\nGuess the word.\nChoose new word at anytime and" +
                 " it will be considered a loss.\nGood luck!!\n");
         String localGuess;
