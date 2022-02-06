@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Module 2 - Object Oriented Programming/10. Inheritance/10. Inheritance.iml" filepath="$PROJECT_DIR$/Module 2 - Object Oriented Programming/10. Inheritance/10. Inheritance.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Module 2 - Object Oriented Programming/11. Concurrency/11. Concurrency.iml" filepath="$PROJECT_DIR$/Module 2 - Object Oriented Programming/11. Concurrency/11. Concurrency.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Module 2 - Object Oriented Programming/7. The World of Objects/7. The World of Objects.iml" filepath="$PROJECT_DIR$/Module 2 - Object Oriented Programming/7. The World of Objects/7. The World of Objects.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Module 1 - Introduction to Java/Capstone Project/Capstone Project.iml" filepath="$PROJECT_DIR$/Module 1 - Introduction to Java/Capstone Project/Capstone Project.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Module 2 - Object Oriented Programming/8. Exception Handling/Challenge/Challenge.iml" filepath="$PROJECT_DIR$/Module 2 - Object Oriented Programming/8. Exception Handling/Challenge/Challenge.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Module 2 - Object Oriented Programming/8. Exception Handling/Debugging Lessons/Debugging Lessons.iml" filepath="$PROJECT_DIR$/Module 2 - Object Oriented Programming/8. Exception Handling/Debugging Lessons/Debugging Lessons.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Module 2 - Object Oriented Programming/8. Exception Handling/Debugging Workbooks/Debugging Workbooks.iml" filepath="$PROJECT_DIR$/Module 2 - Object Oriented Programming/8. Exception Handling/Debugging Workbooks/Debugging Workbooks.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Module 2 - Object Oriented Programming/8. Exception Handling/Exception Handling Lessons/Exception Handling Lessons.iml" filepath="$PROJECT_DIR$/Module 2 - Object Oriented Programming/8. Exception Handling/Exception Handling Lessons/Exception Handling Lessons.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Module 2 - Object Oriented Programming/8. Exception Handling/Exception Handling Workbooks/Exception Handling Workbooks.iml" filepath="$PROJECT_DIR$/Module 2 - Object Oriented Programming/8. Exception Handling/Exception Handling Workbooks/Exception Handling Workbooks.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Java-Bootcamp-Resources.iml" filepath="$PROJECT_DIR$/.idea/Java-Bootcamp-Resources.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Module 2 - Object Oriented Programming/9. Unit Testing/Lessons/Lessons.iml" filepath="$PROJECT_DIR$/Module 2 - Object Oriented Programming/9. Unit Testing/Lessons/Lessons.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Module 2 - Object Oriented Programming/11. Concurrency/Workbooks/Workbooks.iml" filepath="$PROJECT_DIR$/Module 2 - Object Oriented Programming/11. Concurrency/Workbooks/Workbooks.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Module 2 - Object Oriented Programming/9. Unit Testing/Workbooks/Workbooks1.iml" filepath="$PROJECT_DIR$/Module 2 - Object Oriented Programming/9. Unit Testing/Workbooks/Workbooks1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Module 2 - Object Oriented Programming/10. Inheritance/challenge/challenge.iml" filepath="$PROJECT_DIR$/Module 2 - Object Oriented Programming/10. Inheritance/challenge/challenge.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Module 2 - Object Oriented Programming/Capstone/solution/solution.iml" filepath="$PROJECT_DIR$/Module 2 - Object Oriented Programming/Capstone/solution/solution.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Module 2 - Object Oriented Programming/Capstone/starter/starter.iml" filepath="$PROJECT_DIR$/Module 2 - Object Oriented Programming/Capstone/starter/starter.iml" />
+    </modules>
+  </component>
+</project>
