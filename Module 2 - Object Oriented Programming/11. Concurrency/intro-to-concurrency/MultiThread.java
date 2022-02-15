@@ -1,7 +1,10 @@
 public class MultiThread {
 
+
     public static void main(String[] args) {
 
+        Thread thread2 = new Thread(MultiThread::longTask);
+        thread2.start();
         System.out.println("Doing other work on main thread");
         
     }

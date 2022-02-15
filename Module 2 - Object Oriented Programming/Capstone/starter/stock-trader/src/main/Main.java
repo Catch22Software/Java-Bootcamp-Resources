@@ -1,9 +1,16 @@
 package src.main;
 
+import java.io.IOException;
+import java.net.URISyntaxException;
+import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.Objects;
 import java.util.Scanner;
 
 import src.main.model.account.Account;
+import src.main.model.account.Personal;
+import src.main.model.account.Tfsa;
 import src.main.utils.Color;
 
 public class Main {
@@ -13,8 +20,31 @@ public class Main {
     static Scanner scanner = new Scanner(System.in);
   
     public static void main(String[] args) {    
+        explainApp();
+        String choose = accountChoice();
+        if(choose.equals("a"))
+            account = new Personal(INITIAL_DEPOSIT);
+        else
+            account = new Tfsa(INITIAL_DEPOSIT);
+        initialBalance();
+        for (int day = 1; day <= 2160; day++) {
+            displayPrices(day);
 
-      
+            String nextChoice = buyOrSell();
+            String stock = chooseStock();
+            int share = numShares(nextChoice);
+            String result = account.makeTrade(new Trade(
+                    Trade.Stock.valueOf(stock),
+                    nextChoice.equals("buy") ? Trade.Type.MARKET_BUY : Trade.Type.MARKET_SELL,
+                    share,
+                    Double.parseDouble(getPrice(Trade.Stock.valueOf(stock), day))
+            )) ? "successful" : "unsuccessful";
+            tradeStatus(result);
+
+        }
+
+        scanner.close();
+
     }
 
     public static void explainApp() {
@@ -27,7 +57,7 @@ public class Main {
     
     public static void initialBalance() {
         System.out.print("\n\n  You created a " + Color.YELLOW + account.getClass().getSimpleName() + Color.RESET + " account.");
-        System.out.println(" Your account balance is " + Color.GREEN + "$" + "<account.getFunds()>" + Color.RESET);
+        System.out.println(" Your account balance is " + Color.GREEN + "$" + account.getFundsAvailable() + Color.RESET);
         System.out.print("\n  Enter anything to start trading: ");
         scanner.nextLine();
     }
@@ -76,18 +106,16 @@ public class Main {
         }
         return shares;
     }
-    
-    /* TODO
+
     public static void displayPrices(int day) {
         System.out.println("\n\n\t  DAY " + day + " PRICES\n");
 
-        System.out.println("  " + Color.BLUE + Stock.AAPL + "\t\t" + Color.GREEN + getPrice(Stock.AAPL, day));
-        System.out.println("  " + Color.BLUE + Stock.FB + "\t\t" + Color.GREEN + getPrice(Stock.FB, day));
-        System.out.println("  " + Color.BLUE + Stock.GOOG + "\t\t" + Color.GREEN + getPrice(Stock.GOOG, day));
-        System.out.println("  " + Color.BLUE + Stock.TSLA + "\t\t" + Color.GREEN + getPrice(Stock.TSLA, day) + Color.RESET);
+        System.out.println("  " + Color.BLUE + Trade.Stock.AAPL + "\t\t" + Color.GREEN + getPrice(Trade.Stock.AAPL, day));
+        System.out.println("  " + Color.BLUE + Trade.Stock.FB + "\t\t" + Color.GREEN + getPrice(Trade.Stock.FB, day));
+        System.out.println("  " + Color.BLUE + Trade.Stock.GOOG + "\t\t" + Color.GREEN + getPrice(Trade.Stock.GOOG, day));
+        System.out.println("  " + Color.BLUE + Trade.Stock.TSLA + "\t\t" + Color.GREEN + getPrice(Trade.Stock.TSLA, day) + Color.RESET);
 
     }
-    */
     public static void tradeStatus(String result) {
         System.out.println("\n  The trade was " + (result.equals("successful") ? Color.GREEN : Color.RED) + result + Color.RESET + ". Here is your portfolio:");
         System.out.println(account);
@@ -95,17 +123,31 @@ public class Main {
         scanner.nextLine();
     }
     
-    
-    /* TODO
-    public static String getPrice(Stock stock, int day) {
-        return "15.2343";
+
+    public static String getPrice(Trade.Stock stock, int day) {
+        Path path = getPath(stock.toString());
+        try {
+            return Files.lines(path)
+                    .skip(1)
+                    .filter((line) -> Integer.valueOf(line.split(",")[0]) == day)
+                    .map((line) -> line.split(",")[1])
+                    .findFirst()
+                    .orElse(null);
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+            return null;
+        }
     }
 
 
     public static Path getPath(String stock) {
-        return null;
+        try {
+            return Paths.get(Thread.currentThread().getContextClassLoader().getResource("src/main/data/"+stock+".csv").toURI());
+        } catch (URISyntaxException e) {
+            e.printStackTrace();
+            return null;
+        }
     }
-    */
 
 
 }
